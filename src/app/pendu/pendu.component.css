@@ -1,0 +1,14 @@
+.btn1:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+
+.btn1 {
+    width: 50px;
+    bottom: 50px;
+}
+
+.img-responsive{
+  width: 100px;
+  height: 100px;
+}

@@ -1,0 +1,23 @@
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <a routerLink="menu" routerLinkActive="active" class="link-img" id="logo"></a>
+   
+  <ul>
+    <li style="background-color: #bba10e;">
+      <a routerLink="pendu" routerLinkActive="active" class="nav-link">Jeu du pendu</a>
+    </li>
+  </ul>
+</nav>
+
+<h1 class="text-center"> {{title}} </h1>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <br>
+    <span>Tout droit reserver @Julien</span>
+  </div>
+</footer>

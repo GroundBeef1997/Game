@@ -1,0 +1,77 @@
+<p>Jeu du pendu</p>
+
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/b9/77/21/b97721d4-c06e-3ec0-ea39-4d91d90996c9/source/256x256bb.jpg" 
+alt="pendu logo">
+
+<p style="text-align: center;">{{hiddenWord}}</p>
+<p>{{res}}</p>
+<p style="color: red;">tentatives: {{tentatives}}</p>
+
+<div>
+    <button (click) = "tentative('A', mot); clickedButton [0] = true;" [disabled]="clickedButton [0]" class="btn1">A</button>
+    <button (click) = "tentative('B', mot); clickedButton [1] = true;" [disabled]="clickedButton [1]" class="btn1">B</button>
+    <button (click) = "tentative('C', mot); clickedButton [2] = true;" [disabled]="clickedButton [2]" class="btn1">C</button>
+    <button (click) = "tentative('D', mot); clickedButton [3] = true;" [disabled]="clickedButton [3]" class="btn1">D</button>
+    <button (click) = "tentative('E', mot); clickedButton [4] = true;" [disabled]="clickedButton [4]" class="btn1">E</button>
+    <button (click) = "tentative('F', mot); clickedButton [5] = true;" [disabled]="clickedButton [5]" class="btn1">F</button>
+    <button (click) = "tentative('G', mot); clickedButton [6] = true;" [disabled]="clickedButton [6]" class="btn1">G</button>
+    <button (click) = "tentative('H', mot); clickedButton [7] = true;" [disabled]="clickedButton [7]" class="btn1">H</button>
+    <button (click) = "tentative('I', mot); clickedButton [8] = true;" [disabled]="clickedButton [8]" class="btn1">I</button>
+    <button (click) = "tentative('J', mot); clickedButton [9] = true;" [disabled]="clickedButton [9]" class="btn1">J</button>
+    <button (click) = "tentative('K', mot); clickedButton [10] = true;" [disabled]="clickedButton [10]" class="btn1">K</button>
+    <button (click) = "tentative('L', mot); clickedButton [11] = true;" [disabled]="clickedButton [11]" class="btn1">L</button>
+    <button (click) = "tentative('M', mot); clickedButton [12] = true;" [disabled]="clickedButton [12]" class="btn1">M</button>
+    <button (click) = "tentative('N', mot); clickedButton [13] = true;" [disabled]="clickedButton [13]" class="btn1">N</button>
+    <button (click) = "tentative('O', mot); clickedButton [14] = true;" [disabled]="clickedButton [14]" class="btn1">O</button>
+    <button (click) = "tentative('P', mot); clickedButton [15] = true;" [disabled]="clickedButton [15]" class="btn1">P</button>
+    <button (click) = "tentative('Q', mot); clickedButton [16] = true;" [disabled]="clickedButton [16]" class="btn1">Q</button>
+    <button (click) = "tentative('R', mot); clickedButton [17] = true;" [disabled]="clickedButton [17]" class="btn1">R</button>
+    <button (click) = "tentative('S', mot); clickedButton [18] = true;" [disabled]="clickedButton [18]" class="btn1">S</button>
+    <button (click) = "tentative('T', mot); clickedButton [19] = true;" [disabled]="clickedButton [19]" class="btn1">T</button>
+    <button (click) = "tentative('U', mot); clickedButton [20] = true;" [disabled]="clickedButton [20]" class="btn1">U</button>
+    <button (click) = "tentative('V', mot); clickedButton [21] = true;" [disabled]="clickedButton [21]" class="btn1">V</button>
+    <button (click) = "tentative('W', mot); clickedButton [22] = true;" [disabled]="clickedButton [22]" class="btn1">W</button>
+    <button (click) = "tentative('X', mot); clickedButton [23] = true;" [disabled]="clickedButton [23]" class="btn1">X</button>
+    <button (click) = "tentative('Y', mot); clickedButton [24] = true;" [disabled]="clickedButton [24]" class="btn1">Y</button>
+    <button (click) = "tentative('Z', mot); clickedButton [25] = true;" [disabled]="clickedButton [25]" class="btn1">Z</button>
+</div>
+
+<div *ngIf="victory == true">
+<div class="modal" id="modal1" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Bravo !</h4>
+            </div>
+            <div class="modal-body">
+                <p>Vous avez gagné !</p>
+                <img class="img-responsive" src="./assets/img/victory.jpg">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-target="#modal1" (click)="onCloseHandled()" >Rejouer</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-target="#modal1" (click)="goToMenu()" >Allez au menu</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div *ngIf="victory == false">
+<div class="modal" id="modal2" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Dommage !</h4>
+            </div>
+            <div class="modal-body">
+                <p>Vous avez perdu !</p>
+                <img class="img-responsive" src="./assets/img/defeat.png">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"  (click)="onCloseHandled()" >Rejouer</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="goToMenu()" >Allez au menu</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
